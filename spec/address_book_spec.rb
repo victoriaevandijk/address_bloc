@@ -89,5 +89,30 @@
        entry_five = book.entries[4]
      end
    end
+   
+   describe "import_from_csv" do
+    it "imports the correct number of entries" do
+     book.import_from_csv("entries_2.csv")
+     book_size = book.entries.size
+     
+     expect(book_size).to eq 3
+    end
+    
+    it "imports the furst entry" do
+     book.import_from_csv("entries_2.csv")
+     entry_one = book.entries[0]
+    end
+    
+    
+     it "imports the 2nd entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_two = book.entries[1]
+     end
+ 
+     it "imports the 3rd entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_three = book.entries[2]
+     end
+    end
 
  end
