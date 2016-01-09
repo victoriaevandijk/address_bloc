@@ -13,7 +13,8 @@ class MenuController
         puts "2- Create an entry"
         puts "3- Search for an entry"
         puts "4- Import entries from a CSV"
-        puts "5- Exit"
+        puts "5- Erase all entries"
+        puts "6- Exit"
         puts "Enter your selection: "
         
         selection = gets.to_i
@@ -37,6 +38,10 @@ class MenuController
             read_csv
             main_menu
         when 5
+            system "clear"
+            erase_all_entries
+            main_menu
+        when 6
             puts "Goodbye!"
             exit(0)
         else
@@ -44,6 +49,11 @@ class MenuController
             puts "Sorry, that is not a valid input"
             main_menu
         end
+    end
+    
+    def erase_all_entries
+        @address_book.erase_all_entries
+        puts "All entries have been deleted"
     end
     
     def view_all_entries

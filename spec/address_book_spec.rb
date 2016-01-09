@@ -140,6 +140,14 @@
      
    end
    
-   
-
+   context "erase_all_entries" do
+    it "should delete all entries" do
+     book.add_entry("name", "phone", "email")
+     book.add_entry("name", "phone", "email")
+     book.add_entry("name", "phone", "email")
+     
+     book.erase_all_entries
+     expect(book.entries.size).to eq 0
+    end
+   end
  end

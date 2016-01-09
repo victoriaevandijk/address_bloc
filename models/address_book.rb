@@ -63,4 +63,10 @@
     end
     
   end
+  
+    def erase_all_entries
+        @entries = []
+    end
+    
+    
  end
